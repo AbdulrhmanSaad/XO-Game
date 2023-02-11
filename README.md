@@ -7,4 +7,4 @@ To win the game you should make three same (X or O) in row or in colume or in di
 <img src="327062266_517216147209270_454738856176539403_n.jpg"  width="400" hight="350">
 <img src="326384766_890429225493155_3801521412434058332_n.jpg" width="400" hight="350">
 <br><br>
-<img src="327062266_517216147209270_454738856176539403_n.jpg" width="400" hight="350">
+<img src="325821899_1612541715843465_8038621379749849397_n.jpg" width="400" hight="350">

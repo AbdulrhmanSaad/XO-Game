@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
     Button play;
     TextView textView;
     int flag=0;
+    int isTie=0;
     boolean gameOver=false;
     int[][]winning={{0,1,2}, {3,4,5},{6,7,8},{0,3,6},{1,4,7},{2,5,8},{2,4,6},{0,4,8}};
     //-1: empty  0: yellow 1: red
@@ -22,8 +23,10 @@ public class MainActivity extends AppCompatActivity {
     public void imageClicked(View v){
         ImageView counter=(ImageView) v;
         int tapped=Integer.parseInt(counter.getTag().toString());
+
         if(gameState[tapped]==-1&&gameOver==false) {
             gameState[tapped] = flag;
+            isTie++;
             counter.setTranslationY(-1500);
             if (flag == 0) {
                 counter.setImageResource(R.drawable.o);
@@ -49,6 +52,13 @@ public class MainActivity extends AppCompatActivity {
                     textView.setVisibility(View.VISIBLE);
                 }
             }
+            if(isTie==9&&gameOver==false){
+                play=findViewById(R.id.button);
+                textView=findViewById(R.id.textView);
+                textView.setText("No one win!");
+                play.setVisibility(View.VISIBLE);
+                textView.setVisibility(View.VISIBLE);
+            }
         }
     }
     public void clicked(View v){
@@ -62,6 +72,7 @@ public class MainActivity extends AppCompatActivity {
             t.setImageDrawable(null);
         }
          flag=0;
+        isTie=0;
          gameOver=false;
          for (int i=0 ;i<gameState.length;i++) {
              gameState[i] = -1;
